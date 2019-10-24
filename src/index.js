@@ -17,6 +17,9 @@ const store = createStore(reducer)
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(
+
+//we wrap the <App /> component in the Provider component and pass along our store={store} as a prop so every nested component has access to the state store.
+
 <Provider store={store}>
     <App />
 </Provider>, rootElement);
