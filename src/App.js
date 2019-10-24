@@ -6,9 +6,9 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
-
-
 const App = ({car, additionalPrice, additionalFeatures}) => {
+// We're importing these items of state from our store and we're passing them into our App as an object. This is related to the mapStateToProps function as defined below.
+
 
   //we're moving this state object to reducers.js. This state object will go away.
   // const state = {
@@ -54,10 +54,15 @@ const App = ({car, additionalPrice, additionalFeatures}) => {
 };
 
 const mapStateToProps = ({ car, additionalPrice, additionalFeatures }) => {
-  return { 
+  return {
     car, 
     additionalPrice,
     additionalFeatures 
   }
 }
+
+//We're mapping state to props because the App needs to have access to state in order to render components properly. We need to have access to those props in various components, so we're grabbing state from our store and then using that store's state to pass along data wherever we need it in our app. 
+
+// Since we don't actually do any actions inside the app component itself, we don't have to include mapDispatchToProps inside the connect function's params section.
+
   export default connect(mapStateToProps)(App);
