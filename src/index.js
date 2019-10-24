@@ -7,11 +7,12 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
 //reducer import
-import { reducer } from './reducers/reducers'
+import reducer from './reducers/reducers'
 
 import 'bulma/css/bulma.css';
 import './styles.scss';
 
+//2) set up store and provider
 const store = createStore(reducer)
 
 const rootElement = document.getElementById('root');
